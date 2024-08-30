@@ -1,0 +1,57 @@
+.footer-container {
+  display: flex;
+  margin-left: 20px;
+  /*两侧对齐*/
+  /*要先设置宽度*/
+  width: 100%;
+  padding-right: 20px;
+  justify-content: space-between;
+  align-items: center;
+
+
+}
+
+.music {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.music_info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  font-size: 12px;
+}
+
+.music_progress {
+  display: flex;
+  margin-left: 10px;
+  margin-right: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.music_progress div {
+  font-size: 12px;
+  margin-left: 10px;
+}
+
+.music_control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.music_control Button {
+  margin-left: 10px;
+}
+
+
+.music_list{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
