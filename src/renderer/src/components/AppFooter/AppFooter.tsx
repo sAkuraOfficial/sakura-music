@@ -11,7 +11,6 @@ import {
   MenuUnfoldOutlined
 } from '@ant-design/icons'
 
-
 const AppFooter: React.FC = () => {
   return (
     <>
@@ -44,8 +43,6 @@ const AppFooter: React.FC = () => {
           <Button type="dashed" shape="round" icon={<SoundOutlined />} />
           <Button type="dashed" shape="round" icon={<MenuUnfoldOutlined />} />
         </div>
-
-
       </div>
     </>
   )

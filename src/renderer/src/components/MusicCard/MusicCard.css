@@ -1,0 +1,65 @@
+.MusicCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 150px;
+  height: 150px;
+  margin: 20px;
+  color: white;
+  background-size: cover;
+  border-radius: 15px;
+  background-image: url('./zj.png');
+  box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.5);
+  transition: transform 0.5s;
+  position: relative; /* 设为相对定位，以便绝对定位子元素相对于它定位 */
+}
+
+.MusicCard-info {
+  width: calc(100% - 30px);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+  padding-bottom: 5px;
+  backdrop-filter: blur(3px);
+}
+
+.MusicCard-title {
+  font-size: 15px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+.MusicCard-artist {
+  font-size: 12px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.MusicCard-play {
+  position: absolute; /* 使用绝对定位 */
+  bottom: 10px; /* 距离底部 10px */
+  right: 10px; /* 距离右侧 10px */
+}
+
+.MusicCard-play > Button {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(3px);
+
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}

@@ -52,11 +52,9 @@ const App: React.FC = () => {
   // 内容
   const contentStyle = {
     flex: 1,
-    padding: 24,
     margin: 0,
     background: colorBgContainer,
     borderRadius: borderRadiusLG,
-    overflow: 'auto',
     height: siderStyle.height
   }
 
