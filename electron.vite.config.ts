@@ -16,8 +16,25 @@ export default defineConfig({
       }
     },
     server: {
-      host: '127.0.0.1',
-      port: 9899
+      host: '0.0.0.0',
+      port: 9899,
+      proxy: {
+        '/api': {
+          target: 'http://localhost:3000',
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/api/, '')
+        },
+        '/image1': {
+          target: 'https://p1.music.126.net',
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/image1/, '')
+        },
+        '/image2': {
+          target: 'https://p2.music.126.net',
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/image2/, '')
+        }
+      }
     },
     plugins: [react()]
   }

@@ -9,20 +9,23 @@
   color: white;
   background-size: cover;
   border-radius: 15px;
-  background-image: url('./zj.png');
   box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.5);
   transition: transform 0.5s;
   position: relative; /* 设为相对定位，以便绝对定位子元素相对于它定位 */
 }
 
 .MusicCard-info {
-  width: calc(100% - 30px);
+  width: calc(100%);
+  border-radius: 0 0 15px 15px;
+  /*background-color: blue;*/
   text-align: left;
   display: flex;
   flex-direction: column;
   margin-top: auto;
   padding-bottom: 5px;
-  backdrop-filter: blur(3px);
+  padding-left: 6px;
+  background-color: rgba(0, 0, 0, 0.09);
+  backdrop-filter: blur(4px);
 }
 
 .MusicCard-title {
@@ -31,6 +34,9 @@
   margin: 0;
   padding: 0;
   color: white;
+  text-overflow: ellipsis;
+  white-space: nowrap; /* 防止文本换行 */
+  overflow: hidden; /* 隐藏溢出部分 */
 }
 
 .MusicCard-artist {
