@@ -36,6 +36,14 @@ export default defineConfig({
         }
       }
     },
+    build: {
+      outDir: 'dist/renderer', // 构建输出目录
+      rollupOptions: {
+        input: {
+          main: resolve(__dirname, 'src/renderer/index.html')
+        }
+      }
+    },
     plugins: [react()]
   }
 })
