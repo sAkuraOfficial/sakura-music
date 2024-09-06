@@ -1,6 +1,6 @@
 import { Avatar } from 'antd'
 import React from 'react'
-// import tx from './zj.png'
+import tx from '../AppHeader/tx.jpg'
 import './AppFooter.css'
 import { Button } from 'antd'
 import {
