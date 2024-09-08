@@ -5,6 +5,8 @@
   margin: 0;
   border: 0;
   overflow: auto;
+  /*  滚动条样式*/
+  scrollbar-width: thin;
 }
 
 .MusicCardContainer {

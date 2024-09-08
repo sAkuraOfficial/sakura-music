@@ -20,12 +20,22 @@ const Search: React.FC = () => {
   const results: SearchResult[] = location.state?.results || []
 
   // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+  // const getImageSrc = (imgUrl: string) => {
+  //   if (imgUrl.startsWith('https://p1.music.126.net/')) {
+  //     return `/image1/${imgUrl.split('https://p1.music.126.net/')[1]}?param=200y200`
+  //   } else if (imgUrl.startsWith('https://p2.music.126.net/')) {
+  //     return `/image2/${imgUrl.split('https://p2.music.126.net/')[1]}?param=200y200`
+  //   }
+  //   return `${imgUrl}?param=200y200`
+  // }
+
+  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   const getImageSrc = (imgUrl: string) => {
-    if (imgUrl.startsWith('https://p1.music.126.net/')) {
-      return `/image1/${imgUrl.split('https://p1.music.126.net/')[1]}?param=200y200`
-    } else if (imgUrl.startsWith('https://p2.music.126.net/')) {
-      return `/image2/${imgUrl.split('https://p2.music.126.net/')[1]}?param=200y200`
-    }
+    // if (imgUrl.startsWith('https://p1.music.126.net/')) {
+    //   return `/image1/${imgUrl.split('https://p1.music.126.net/')[1]}?param=200y200`
+    // } else if (imgUrl.startsWith('https://p2.music.126.net/')) {
+    //   return `/image2/${imgUrl.split('https://p2.music.126.net/')[1]}?param=200y200`
+    // }
     return `${imgUrl}?param=200y200`
   }
 
@@ -39,6 +49,7 @@ const Search: React.FC = () => {
               title={result.name}
               artist={result.artists.map((artist) => artist.name).join(', ')}
               img={getImageSrc(result.img)} // 传入背景图 URL
+              // img={result.img} // 传入背景图 URL
               isPlaying={false}
               onPlayPause={() => {
                 /*逻辑 */

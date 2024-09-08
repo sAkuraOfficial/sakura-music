@@ -12,7 +12,9 @@ const AppHeader: React.FC = () => {
   const onSearch = async (value: string) => {
     try {
       // 发送请求到 API
-      const response = await fetch(`/api/search?keywords=${encodeURIComponent(value)}`)
+      const response = await fetch(
+        `http://114.132.98.222:3001/search?keywords=${encodeURIComponent(value)}`
+      )
       const data = await response.json()
 
       // 假设搜索结果页面的路径是 `/search`
