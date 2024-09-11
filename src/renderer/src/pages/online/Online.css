@@ -5,7 +5,5 @@
   margin: 0;
   border: 0;
   overflow: hidden;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-content: center;
+
 }
