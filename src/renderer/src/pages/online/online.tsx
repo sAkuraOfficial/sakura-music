@@ -2,17 +2,14 @@ import React, { useState, useEffect } from 'react'
 import { Carousel } from 'antd'
 import './Online.css'
 import MusicCard from '../../components/MusicCard/MusicCard'
+import { buildStyles, CircularProgressbar, CircularProgressbarWithChildren } from 'react-circular-progressbar'
+import 'react-circular-progressbar/dist/styles.css'
 
 const Online: React.FC = () => {
   const [banners, setBanners] = useState<{ img: string }[]>([])
-  const [song, setSong] = useState([])
+  const [randomSong, setrandomSong] = useState({})
 
   const getImageSrc = (imgUrl: string) => {
-    // if (imgUrl.startsWith('https://p1.music.126.net/')) {
-    //   return `/image1/${imgUrl.split('https://p1.music.126.net/')[1]}?param=200y200`
-    // } else if (imgUrl.startsWith('https://p2.music.126.net/')) {
-    //   return `/image2/${imgUrl.split('https://p2.music.126.net/')[1]}?param=200y200`
-    // }
     return `${imgUrl}?param=200y200`
   }
   useEffect(() => {
@@ -23,35 +20,43 @@ const Online: React.FC = () => {
       .catch((error) => console.error('Error fetching banners:', error))
   }, [])
 
-  //从http://114.132.98.222:3001/search?keywords=周杰伦，获取第一首歌的信息
   useEffect(() => {
-    fetch('http://114.132.98.222:3001/search?keywords=周杰伦')
+    fetch('http://114.132.98.222:3001/search?keywords=华语')
       .then((response) => response.json())
-      .then((data) => setSong(data[0]))
-      .catch((error) => console.error('Error fetching song:', error))
+      .then((data) => {
+        //   data是一个数组,随机取一个
+        const randomIndex = Math.floor(Math.random() * data.length)
+        setrandomSong(data[randomIndex])
+        // console.log(data[randomIndex])
+      })
+      .catch((error) => console.error('Error fetching search results:', error))
   }, [])
 
   // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
   const onChange = (currentSlide: number) => {
-    console.log(currentSlide)
+    // console.log(currentSlide)
   }
+  const percentage = 30
 
   return (
     <div className="Page-Online">
       <div className="page-online-header">
         <div>
-          <MusicCard
-            key={song.id}
-            title={song.name}
-            artist={'周杰伦'}
-            img={getImageSrc(song.img)} // 传入背景图 URL
-            onPlayPause={() => {
-              /*逻辑 */
-
-            }
-            }
-            isPlaying={false}
-          ></MusicCard>
+          {randomSong && (
+            <MusicCard
+              img={getImageSrc(randomSong.img)}
+              artist={
+                Array.isArray(randomSong.artists)
+                  ? randomSong.artists.map((artist: { name: string }) => artist.name).join(', ')
+                  : 'Unknown Artist'
+              }
+              title={randomSong.name}
+              isPlaying={true}
+              onPlayPause={() => {
+                console.log('Play/Pause')
+              }}
+            />
+          )}
         </div>
         <Carousel
           className={'Banner-Carousel'}
@@ -68,6 +73,30 @@ const Online: React.FC = () => {
             </div>
           ))}
         </Carousel>
+        <div className={'play-number-day-container'}>
+          <CircularProgressbarWithChildren
+            className={'play-number-day-progress'}
+            value={percentage}
+            styles={buildStyles({
+              textColor: 'red',
+              pathColor: 'turquoise',
+              trailColor: 'pink'
+            })}
+          >
+            <div style={{ fontSize: 35, marginTop: -20 }}>
+              🥰
+            </div>
+            <div style={{ fontSize: 25, marginTop: -5 }}>
+              {percentage}%
+            </div>
+          </CircularProgressbarWithChildren>
+          <div className="play-number-day-title">今日听歌目标</div>
+        </div>
+      </div>
+
+      {/* 歌单推荐 */}
+      <div className={'play-list-container'}>
+        <div className="play-list-recommend">歌单推荐</div>
       </div>
     </div>
   )
