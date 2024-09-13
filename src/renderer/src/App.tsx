@@ -66,9 +66,9 @@ const App: React.FC = () => {
       </Header>
 
       {/*中间部分*/}
-      <Layout style={{ flex: 1 }}>
+      <Layout>
         {/*中左：侧边*/}
-        <Sider width={200} style={siderStyle}>
+        <Sider width={180} style={siderStyle}>
           <AppSider />
         </Sider>
         {/*中右：内容*/}

@@ -1,0 +1,17 @@
+.Banner-pic {
+  width: 400px;
+  height: 150px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  overflow: hidden;
+}
+
+.Banner-Carousel {
+  width: 400px;
+  height: 150px;
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.5);
+}

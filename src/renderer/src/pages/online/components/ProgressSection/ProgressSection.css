@@ -1,0 +1,19 @@
+.play-number-day-container {
+  margin-left: 30px;
+  overflow: hidden;
+  height: 190px;
+  width: 130px;
+}
+
+.play-number-day-progress {
+  height: 130px;
+  margin-top: 20px;
+}
+
+.play-number-day-title {
+  text-align: center;
+  font-size: 15px;
+  margin: 0;
+  margin-top: 1px;
+  padding: 0;
+}

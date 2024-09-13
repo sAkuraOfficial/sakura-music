@@ -9,54 +9,15 @@
 
 .page-online-header {
   display: flex;
-  margin-left: 5px;
+  margin-left: 0px;
   margin-right: 15px;
   margin-bottom: 0;
   padding: 0;
-  justify-content: center;
-}
-
-.Banner-pic {
-  width: 400px;
-  height: 150px;
-  padding: 0;
-  margin: 0;
-  border: 0;
-  overflow: hidden;
-}
-
-.Banner-Carousel {
-  width: 400px;
-  height: 150px;
-  margin-top: 20px;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.5);
+  justify-content: left;
 }
 
 .play-list-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin-top: 0px;
-}
-
-.play-number-day-container {
-  margin-left: 30px;
-  overflow: hidden;
-}
-
-.play-number-day-progress {
-  height: 130px;
-  margin-top: 20px;
-}
-
-.play-number-day-title {
-  text-align: center;
-  font-size: 15px;
-  margin: 0;
-  margin-top: 1px;
-  padding: 0;
+  margin: -10px 5px 0 0px;
 }
 
 .play-list-recommend {
@@ -64,4 +25,3 @@
   margin: 0;
   padding: 0;
 }
-

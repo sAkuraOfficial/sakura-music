@@ -1,4 +1,4 @@
-.MusicCard {
+.PlayListCard {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,18 +13,17 @@
   position: relative; /* 设为相对定位，以便绝对定位子元素相对于它定位 */
 
   /*动画*/
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease; /* 添加过渡效果 */
+  transition: transform 0.3s ease,
+  box-shadow 0.3s ease; /* 添加过渡效果 */
 }
 
-.MusicCard:hover {
+.PlayListCard:hover {
   /*动画*/
   transform: translateY(-10px) scale(1.02); /* 鼠标悬停时向上移动并放大 */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* 鼠标悬停时增加阴影效果 */
 }
 
-.MusicCard-info {
+.PlayListCard-info {
   width: calc(100%);
   border-radius: 0 0 15px 15px;
   /*background-color: blue;*/
@@ -38,7 +37,7 @@
   backdrop-filter: blur(4px);
 }
 
-.MusicCard-title {
+.PlayListCard-title {
   font-size: 15px;
   font-weight: normal;
   margin: 0;
@@ -52,7 +51,7 @@
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* 添加阴影 */
 }
 
-.MusicCard-artist {
+.PlayListCard-artist {
   font-size: 12px;
   font-weight: normal;
   margin: 0;
@@ -68,13 +67,13 @@
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* 添加阴影 */
 }
 
-.MusicCard-play {
+.PlayListCard-play {
   position: absolute; /* 使用绝对定位 */
   bottom: 10px; /* 距离底部 10px */
   right: 10px; /* 距离右侧 10px */
 }
 
-.MusicCard-play > Button {
+.PlayListCard-play > Button {
   width: 30px;
   height: 30px;
   padding: 0;
