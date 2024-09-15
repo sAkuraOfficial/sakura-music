@@ -6,7 +6,7 @@ const useBanners = () => {
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    fetch('http://114.132.98.222:3001/getBanner')
+    fetch('https://api.sakuraofficial.site/getBanner')
       .then((response) => response.json())
       .then((data) => setBanners(data))
       .catch((error) => {

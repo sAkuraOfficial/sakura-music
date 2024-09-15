@@ -6,7 +6,7 @@ const useRandomSong = () => {
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    fetch('http://114.132.98.222:3001/search?keywords=华语')
+    fetch('https://api.sakuraofficial.site/search?keywords=华语')
       .then((response) => response.json())
       .then((data) => {
         const randomIndex = Math.floor(Math.random() * data.length)
