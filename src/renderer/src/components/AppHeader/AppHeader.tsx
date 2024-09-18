@@ -13,7 +13,7 @@ const AppHeader: React.FC = () => {
     try {
       // 发送请求到 API
       const response = await fetch(
-        `http://114.132.98.222:3001/search?keywords=${encodeURIComponent(value)}`
+        `https://api.sakuraofficial.site/search?keywords=${encodeURIComponent(value)}`
       )
       const data = await response.json()
 
