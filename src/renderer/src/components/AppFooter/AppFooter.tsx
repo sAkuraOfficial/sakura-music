@@ -43,6 +43,7 @@ const AppFooter: React.FC = () => {
           <Button type="dashed" shape="round" icon={<SoundOutlined />} />
           <Button type="dashed" shape="round" icon={<MenuUnfoldOutlined />} />
         </div>
+      <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备2024312520号-1</a>
       </div>
     </>
   )
